@@ -1,0 +1,199 @@
+Script started on Wed 16 Mar 2016 03:28:27 PM PDT
+luoj47@uw1-320-06:~$ ls
+Assignment1	     data4customers.txt  Store.h
+BinTree.cpp	     data4movies.txt	 Transaction.cpp
+BinTree.h	     Drama.cpp		 TransactionFactory.cpp
+Borrow.cpp	     Drama.h		 TransactionFactory.h
+Borrow.h	     HashTable.cpp	 Transaction.h
+Classic.cpp	     HashTable.h	 TransactionManager.cpp
+Classic.h	     History.cpp	 TransactionManager.h
+Comedy.cpp	     History.h		 typescript
+Comedy.h	     Inventory.cpp	 Video.cpp
+Customer.cpp	     Inventory.h	 VideoFactory.cpp
+Customer.h	     Main.cpp		 VideoFactory.h
+CustomerManager.cpp  Return.cpp		 Video.h
+CustomerManager.h    Return.h		 VideoManager.cpp
+data4commands.txt    Store.cpp		 VideoManager.h
+luoj47@uw1-320-06:~$ ls[Kg++ *.h *.cpp -g -o progname
+luoj47@uw1-320-06:~$ valgrind --leak-check=full ./progname
+==15259== Memcheck, a memory error detector
+==15259== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==15259== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==15259== Command: ./progname
+==15259== 
+-----------------------------Inventory Build Errors-----------------------------
+Invalid Lines:
+1. Z, 10, Hal Ashby, Harold and Maude, Bud Cort 3 1971
+2. Z, 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
+
+
+Processing Transactions...
+
+------------------------------------VIDEOS------------------------------------
+-----------------------------------Comedies-----------------------------------
+Title                            YearDirector            Stock               
+ Annie Hall                      1977 Woody Allen        10                  
+ Fargo                           1996 Joel Coen          10                  
+ National Lampoon's Animal House 1978 John Landis        10                  
+ Pirates of the Caribbean        2003 Gore Verbinski     10                  
+ Sleepless in Seattle            1993 Nora Ephron        10                  
+ When Harry Met Sally            1989 Rob Reiner         10                  
+ You've Got Mail                 1998 Nora Ephron        10                  
+
+
+------------------------------------Dramas------------------------------------
+Title                            YearDirector            Stock               
+ Good Morning Vietnam            1988 Barry Levinson     10                  
+ Unforgiven                      1992 Clint Eastwood     10                  
+ Good Will Hunting               2000 Gus Van Sant       10                  
+ Silence of the Lambs            1991 Jonathan Demme     10                  
+ Dogfight                        1991 Nancy Savoca       10                  
+ King of Hearts                  1967 Phillippe De Broca 10                  
+ Schindler's List                1993 Steven Spielberg   10                  
+
+
+-----------------------------------Classics-----------------------------------
+Month  Year  Actor             Title                  Director         Stock
+9      1938  Cary Grant         Holiday                George Cukor    10   
+9      1938  Katherine Hepburn  Holiday                George Cukor    10   
+2      1939  Clark Gable        Gone With the Wind     Victor Fleming  10   
+2      1939  Vivien Leigh       Gone With the Wind     Victor Fleming  10   
+7      1939  Judy Garland       The Wizard of Oz       Victor Fleming  10   
+5      1940  Cary Grant         The Philadelphia Story George Cukor    10   
+5      1940  Katherine Hepburn  The Philadelphia Story George Cukor    10   
+10     1941  Humphrey Bogart    The Maltese Falcon     John Huston     10   
+8      1942  Humphrey Bogart    Casablanca             Michael Curtiz  10   
+8      1942  Ingrid Bergman     Casablanca             Michael Curtiz  10   
+11     1946  Donna Reed         It's a Wonderful Life  Frank Capra     10   
+11     1946  James Steward      It's a Wonderful Life  Frank Capra     10   
+2      1971  Malcolm McDowell   A Clockwork Orange     Stanley Kubrick 10   
+3      1971  Ruth Gordon        Harold and Maude       Hal Ashby       10   
+
+
+Customer ID: 1000
+Customer Name: Mouse
+-----------------------------Customer Transactions-----------------------------
+This customer has not performed any transactions.
+
+Customer ID: 5000
+Customer Name: Frog
+-----------------------------Customer Transactions-----------------------------
+This customer has not performed any transactions.
+
+Customer ID: 8000
+Customer Name: Wacky
+-----------------------------Customer Transactions-----------------------------
+This customer has not performed any transactions.
+
+Non-Existent video entered. Invalid Line: B 1111 D Z 2 1971 Malcolm McDowell
+Invalid command entered. Invalid line: X
+Invalid command entered. Invalid line: Z 1000 D C 10 1941 Humphrey Bogart
+Non-Existent customer entered. Invalid Line: B 1234 D C 2 1971 Malcolm McDowell
+Non-Existent video entered. Invalid Line: B 1000 D F Bogus Title, 2001
+Borrow command will result in a negative stock: B 9000 D C 3 1971 Ruth Gordon
+Borrow command will result in a negative stock: B 3333 D C 3 1971 Ruth Gordon
+Borrow command will result in a negative stock: B 7777 D C 3 1971 Ruth Gordon
+Non-Existent video entered. Invalid Line: B 1000 D D Steven Spielberg, Bogus Title,
+------------------------------------VIDEOS------------------------------------
+-----------------------------------Comedies-----------------------------------
+Title                            YearDirector            Stock               
+ Annie Hall                      1977 Woody Allen        9                   
+ Fargo                           1996 Joel Coen          8                   
+ National Lampoon's Animal House 1978 John Landis        9                   
+ Pirates of the Caribbean        2003 Gore Verbinski     10                  
+ Sleepless in Seattle            1993 Nora Ephron        9                   
+ When Harry Met Sally            1989 Rob Reiner         9                   
+ You've Got Mail                 1998 Nora Ephron        9                   
+
+
+------------------------------------Dramas------------------------------------
+Title                            YearDirector            Stock               
+ Good Morning Vietnam            1988 Barry Levinson     9                   
+ Unforgiven                      1992 Clint Eastwood     9                   
+ Good Will Hunting               2000 Gus Van Sant       9                   
+ Silence of the Lambs            1991 Jonathan Demme     9                   
+ Dogfight                        1991 Nancy Savoca       8                   
+ King of Hearts                  1967 Phillippe De Broca 9                   
+ Schindler's List                1993 Steven Spielberg   9                   
+
+
+-----------------------------------Classics-----------------------------------
+Month  Year  Actor             Title                  Director         Stock
+9      1938  Cary Grant         Holiday                George Cukor    9    
+9      1938  Katherine Hepburn  Holiday                George Cukor    10   
+2      1939  Clark Gable        Gone With the Wind     Victor Fleming  10   
+2      1939  Vivien Leigh       Gone With the Wind     Victor Fleming  10   
+7      1939  Judy Garland       The Wizard of Oz       Victor Fleming  10   
+5      1940  Cary Grant         The Philadelphia Story George Cukor    9    
+5      1940  Katherine Hepburn  The Philadelphia Story George Cukor    9    
+10     1941  Humphrey Bogart    The Maltese Falcon     John Huston     9    
+8      1942  Humphrey Bogart    Casablanca             Michael Curtiz  10   
+8      1942  Ingrid Bergman     Casablanca             Michael Curtiz  10   
+11     1946  Donna Reed         It's a Wonderful Life  Frank Capra     10   
+11     1946  James Steward      It's a Wonderful Life  Frank Capra     10   
+2      1971  Malcolm McDowell   A Clockwork Orange     Stanley Kubrick 9    
+3      1971  Ruth Gordon        Harold and Maude       Hal Ashby       0    
+
+
+Customer ID: 1000
+Customer Name: Mouse
+-----------------------------Customer Transactions-----------------------------
+H
+B D  Barry Levinson,  Good Morning Vietnam, 1988
+B C  George Cukor,  The Philadelphia Story, Katherine Hepburn 5 1940
+B D  Gus Van Sant,  Good Will Hunting, 2000
+B C  George Cukor,  The Philadelphia Story, Cary Grant 5 1940
+B C  Hal Ashby,  Harold and Maude, Ruth Gordon 3 1971
+B F  Joel Coen,  Fargo, 1996
+
+Customer ID: 1111
+Customer Name: Mouse
+-----------------------------Customer Transactions-----------------------------
+B C  Stanley Kubrick,  A Clockwork Orange, Malcolm McDowell 2 1971
+B C  Hal Ashby,  Harold and Maude, Ruth Gordon 3 1971
+B C  John Huston,  The Maltese Falcon, Humphrey Bogart 10 1941
+B C  George Cukor,  Holiday, Cary Grant 9 1938
+
+Customer ID: 5000
+Customer Name: Frog
+-----------------------------Customer Transactions-----------------------------
+H
+B C  Hal Ashby,  Harold and Maude, Ruth Gordon 3 1971
+R C  Hal Ashby,  Harold and Maude, Ruth Gordon 3 1971
+B C  Hal Ashby,  Harold and Maude, Ruth Gordon 3 1971
+R C  Hal Ashby,  Harold and Maude, Ruth Gordon 3 1971
+B C  Hal Ashby,  Harold and Maude, Ruth Gordon 3 1971
+R C  Hal Ashby,  Harold and Maude, Ruth Gordon 3 1971
+B C  Hal Ashby,  Harold and Maude, Ruth Gordon 3 1971
+
+Customer ID: 8000
+Customer Name: Wacky
+-----------------------------Customer Transactions-----------------------------
+H
+B F  Nora Ephron,  You've Got Mail, 1998
+R F  Nora Ephron,  You've Got Mail, 1998
+B C  Hal Ashby,  Harold and Maude, Ruth Gordon 3 1971
+B C  Hal Ashby,  Harold and Maude, Ruth Gordon 3 1971
+B F  John Landis,  National Lampoon's Animal House, 1978
+
+Customer ID: 8888
+Customer Name: Pig
+-----------------------------Customer Transactions-----------------------------
+B F  Woody Allen,  Annie Hall, 1977
+B F  Rob Reiner,  When Harry Met Sally, 1989
+B D  Jonathan Demme,  Silence of the Lambs, 1991
+B D  Nancy Savoca,  Dogfight, 1991
+B C  Hal Ashby,  Harold and Maude, Ruth Gordon 3 1971
+
+==15259== 
+==15259== HEAP SUMMARY:
+==15259==     in use at exit: 0 bytes in 0 blocks
+==15259==   total heap usage: 1,718 allocs, 1,718 frees, 138,810 bytes allocated
+==15259== 
+==15259== All heap blocks were freed -- no leaks are possible
+==15259== 
+==15259== For counts of detected and suppressed errors, rerun with: -v
+==15259== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+luoj47@uw1-320-06:~$ exit
+
+Script done on Wed 16 Mar 2016 03:29:25 PM PDT

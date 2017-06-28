@@ -1,0 +1,7 @@
+Compiling Instructions:
+
+- A typescript has been included that shows project compiling and how
+  it was compiled.
+- Otherwise, all the .h and .cpp files should be compiled together
+  and be in the same folder, along with the .txt files required for
+  the project (data4customers.txt, data4movies.txt, data4commands.txt)
